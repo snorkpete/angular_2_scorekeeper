@@ -7,11 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HighScoreComponent } from './high_score/high-score.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    HighScoreComponent,
+    LeaderboardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
