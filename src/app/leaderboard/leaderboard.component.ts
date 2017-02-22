@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { Statistics } from '../statistics';
+import { StatisticsService } from '../leaderboard.service';
 
 @Component({
   moduleId: module.id,
@@ -9,9 +11,26 @@ import { Component } from '@angular/core';
 })
 
 
-export class LeaderboardComponent {
+export class LeaderboardComponent implements OnInit {
 
-  name: string = 'Aaron';
-  names: any[] = [];
+  statistics: Statistics[] = [];
+
+  constructor(private statisticsService: StatisticsService) { }
+
+  ngOnInit(): void {
+     this.statisticsService.getStatistics()
+      .subscribe(
+                data => this.statistics = data
+            )
+  }
 
 }
+
+
+
+
+
+// ngOnInit(): void {
+//     this.statisticsService.getStatistics()
+//       .then(statistics => this.statistics = statistics);
+//   }

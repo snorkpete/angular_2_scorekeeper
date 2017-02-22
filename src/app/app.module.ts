@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HighScoreComponent } from './high_score/high-score.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { StatisticsService } from './leaderboard.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ StatisticsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,18 +1,24 @@
 <div class="container">
-  <h4>Leaderboard</h4>          
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h4>Leaderboard</h4>
+    </div>
+  </div>          
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Game</th>
-        <th>wins</th>
+        <th>User</th>
+        <th>Wins</th>
+        <th>Low</th>
+        <th>High</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
+      <tr *ngFor="let statistic of statistics">
+        <td>{{ statistic.user.username }}</td>
+        <td>{{ statistic.games_won }}</td>
+        <td>{{ statistic.low_score }}</td>
+        <td>{{ statistic.high_score }}</td>
       </tr>
     </tbody>
   </table>
