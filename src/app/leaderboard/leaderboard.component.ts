@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Statistics } from '../statistics';
 import { StatisticsService } from '../leaderboard.service';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { StatisticsService } from '../leaderboard.service';
   selector: 'leaderboard',
   templateUrl: './leaderboard.component.html',
   styleUrls: ['./leaderboard.component.css'],
+  providers: [SpinnerComponent],
 })
 
 
@@ -33,16 +35,24 @@ export class LeaderboardComponent implements OnInit {
       order: null,
     }
   ];
+  public isRequesting: boolean;
 
 
 
   constructor(private statisticsService: StatisticsService) { }
 
   ngOnInit(): void {
+    this.isRequesting = true;
      this.statisticsService.getStatistics()
       .subscribe(
-                data => this.statistics = data
+                data => this.statistics = data,
+                () => this.stopRefreshing(),
+                () => this.stopRefreshing()
             )
+  }
+
+  private stopRefreshing() {
+    this.isRequesting = false;
   }
 
 

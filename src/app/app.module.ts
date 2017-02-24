@@ -12,6 +12,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StatisticsService } from './leaderboard.service';
 import { SearchPipe } from "./search.pipe";
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
@@ -23,6 +24,7 @@ import { SearchPipe } from "./search.pipe";
     LeaderboardComponent,
     ProfileComponent,
     SearchPipe,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,3 +36,15 @@ import { SearchPipe } from "./search.pipe";
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+// ngOnInit(): void {
+//     this.isRequesting = true;
+//      this.statisticsService.getStatistics()
+//       .subscribe(
+//                 data => this.statistics = data,
+//                 () => this.stopRefreshing(),
+//                 () => this.stopRefreshing()
+//             )
+//   }
