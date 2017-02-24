@@ -36,15 +36,3 @@ import { SpinnerComponent } from './spinner/spinner.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-
-// ngOnInit(): void {
-//     this.isRequesting = true;
-//      this.statisticsService.getStatistics()
-//       .subscribe(
-//                 data => this.statistics = data,
-//                 () => this.stopRefreshing(),
-//                 () => this.stopRefreshing()
-//             )
-//   }
