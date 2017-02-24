@@ -11,6 +11,7 @@ import { HighScoreComponent } from './high_score/high-score.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StatisticsService } from './leaderboard.service';
+import { SearchPipe } from "./search.pipe";
 
 
 
@@ -20,7 +21,8 @@ import { StatisticsService } from './leaderboard.service';
     DashboardComponent,
     HighScoreComponent,
     LeaderboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

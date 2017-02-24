@@ -4,14 +4,18 @@
       <h4>Leaderboard</h4>
     </div>
   </div>
+  <form>
+    <label>Filter players by name:</label>
+    <input type="text" [(ngModel)]="term" name="search_form" />
+  </form>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th *ngFor="let category of categories"><span (click)="sort(category)">{{ category.title }}</span></th>
+        <th *ngFor="let category of categories"><span (click)="sort(category, statistics)">{{ category.title }}</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let statistic of statistics">
+      <tr *ngFor="let statistic of statistics | search:term">
         <td>{{ statistic.user.username }}</td>
         <td>{{ statistic.games_won }}</td>
         <td>{{ statistic.low_score }}</td>
@@ -20,9 +24,3 @@
     </tbody>
   </table>
 </div>
-
-
-
-
-
-<!--<th (click)="sortByWins()">Wins</th>-->

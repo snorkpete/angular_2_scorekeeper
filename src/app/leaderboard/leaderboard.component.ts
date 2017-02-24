@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Statistics } from '../statistics';
 import { StatisticsService } from '../leaderboard.service';
 
+
 @Component({
   moduleId: module.id,
   selector: 'leaderboard',
@@ -46,11 +47,11 @@ export class LeaderboardComponent implements OnInit {
 
 
 
-  sort(category): void {
+  sort(category, stats): void {
     switch(category.title) {
       case "User":
       if(category.order === "asc" || category.order === null) {
-        this.statistics.sort(function(item1, item2) {
+        stats.sort(function(item1, item2) {
           if ( item1.user.username < item2.user.username ){
             return -1;
           }else if( item1.user.username > item2.user.username ){
@@ -62,7 +63,7 @@ export class LeaderboardComponent implements OnInit {
         category.order = "desc";
       } 
       else if(category.order ==="desc") {
-        this.statistics.sort(function(item1, item2) {
+        stats.sort(function(item1, item2) {
           if ( item1.user.username > item2.user.username ){
             return -1;
           }else if( item1.user.username < item2.user.username ){
@@ -77,7 +78,7 @@ export class LeaderboardComponent implements OnInit {
 
       case "Wins":
         if(category.order === "asc" || category.order === null) {
-          this.statistics.sort(function(item1, item2) {
+          stats.sort(function(item1, item2) {
             if ( item1.games_won < item2.games_won ){
               return -1;
             }else if( item1.games_won > item2.games_won ){
@@ -89,7 +90,7 @@ export class LeaderboardComponent implements OnInit {
           category.order = "desc";
         } 
         else if(category.order ==="desc") {
-          this.statistics.sort(function(item1, item2) {
+          stats.sort(function(item1, item2) {
             if ( item1.games_won > item2.games_won ){
               return -1;
             }else if( item1.games_won < item2.games_won ){
@@ -103,7 +104,7 @@ export class LeaderboardComponent implements OnInit {
         break;
       case "Low":
         if(category.order === "asc" || category.order === null) {
-          this.statistics.sort(function(item1, item2) {
+          stats.sort(function(item1, item2) {
             if ( item1.low_score < item2.low_score ){
               return -1;
             }else if( item1.low_score > item2.low_score ){
@@ -115,7 +116,7 @@ export class LeaderboardComponent implements OnInit {
           category.order = "desc";
         } 
         else if(category.order ==="desc") {
-          this.statistics.sort(function(item1, item2) {
+          stats.sort(function(item1, item2) {
             if ( item1.low_score > item2.low_score ){
               return -1;
             }else if( item1.low_score < item2.low_score ){
@@ -130,7 +131,7 @@ export class LeaderboardComponent implements OnInit {
     
       case "High":
         if(category.order === "asc" || category.order === null) {
-          this.statistics.sort(function(item1, item2) {
+          stats.sort(function(item1, item2) {
             if ( item1.high_score < item2.high_score ){
               return -1;
             }else if( item1.high_score > item2.high_score ){
@@ -142,7 +143,7 @@ export class LeaderboardComponent implements OnInit {
           category.order = "desc";
         } 
         else if(category.order ==="desc") {
-          this.statistics.sort(function(item1, item2) {
+          stats.sort(function(item1, item2) {
             if ( item1.high_score > item2.high_score ){
               return -1;
             }else if( item1.high_score < item2.high_score ){

@@ -22,7 +22,7 @@ export class StatisticsService {
     getStatistics() {
         return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/books_and_run/statistics/')
             .map(res => res.json() as Statistics[])
-    }
+    } 
 
 
     private handleError(error: any): Promise<any> {
