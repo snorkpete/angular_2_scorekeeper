@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Statistics } from '../statistics';
 import { StatisticsService } from '../leaderboard.service';
-import { SpinnerComponent } from '../spinner/spinner.component';
 
 
 @Component({
@@ -10,7 +9,6 @@ import { SpinnerComponent } from '../spinner/spinner.component';
   selector: 'leaderboard',
   templateUrl: './leaderboard.component.html',
   styleUrls: ['./leaderboard.component.css'],
-  providers: [SpinnerComponent],
 })
 
 
