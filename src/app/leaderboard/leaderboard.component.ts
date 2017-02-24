@@ -14,7 +14,26 @@ import { StatisticsService } from '../leaderboard.service';
 export class LeaderboardComponent implements OnInit {
 
   statistics: Statistics[] = [];
-  categories: String[] = ["User", "Wins", "Low", "High"];
+  categories: any[] = [
+    {
+      title: "User",
+      order: null,
+    },
+    {
+      title: "Wins",
+      order: null,
+    },
+    {
+      title: "Low",
+      order: null,
+    },
+    {
+      title: "High",
+      order: null,
+    }
+  ];
+
+
 
   constructor(private statisticsService: StatisticsService) { }
 
@@ -27,7 +46,119 @@ export class LeaderboardComponent implements OnInit {
 
 
   sort(category): void {
-    console.log(category);
+    switch (category.title) {  
+      case "User":
+      if(category.order === "asc" || category.order === null) {
+        this.statistics.sort(function(item1, item2) {
+          if ( item1.user.username < item2.user.username ){
+            return -1;
+          }else if( item1.user.username > item2.user.username ){
+              return 1;
+          }else{
+            return 0;	
+          }
+        });
+        category.order = "desc";
+      } 
+      else if(category.order ==="desc") {
+        this.statistics.sort(function(item1, item2) {
+          if ( item1.user.username > item2.user.username ){
+            return -1;
+          }else if( item1.user.username < item2.user.username ){
+              return 1;
+          }else{
+            return 0;	
+          }
+        });
+        category.order = "asc";
+      }
+      break;
+
+      case "Wins":
+        if(category.order === "asc" || category.order === null) {
+          this.statistics.sort(function(item1, item2) {
+            if ( item1.games_won < item2.games_won ){
+              return -1;
+            }else if( item1.games_won > item2.games_won ){
+                return 1;
+            }else{
+              return 0;	
+            }
+          });
+          category.order = "desc";
+        } 
+        else if(category.order ==="desc") {
+          this.statistics.sort(function(item1, item2) {
+            if ( item1.games_won > item2.games_won ){
+              return -1;
+            }else if( item1.games_won < item2.games_won ){
+                return 1;
+            }else{
+              return 0;	
+            }
+          });
+          category.order = "asc";
+        }
+        break;
+
+      case "Low":
+        if(category.order === "asc" || category.order === null) {
+          this.statistics.sort(function(item1, item2) {
+            if ( item1.low_score < item2.low_score ){
+              return -1;
+            }else if( item1.low_score > item2.low_score ){
+                return 1;
+            }else{
+              return 0;	
+            }
+          });
+          category.order = "desc";
+        } 
+        else if(category.order ==="desc") {
+          this.statistics.sort(function(item1, item2) {
+            if ( item1.low_score > item2.low_score ){
+              return -1;
+            }else if( item1.low_score < item2.low_score ){
+                return 1;
+            }else{
+              return 0;	
+            }
+          });
+          category.order = "asc";
+        }
+        break;
+    
+      case "High":
+        if(category.order === "asc" || category.order === null) {
+          this.statistics.sort(function(item1, item2) {
+            if ( item1.high_score < item2.high_score ){
+              return -1;
+            }else if( item1.high_score > item2.high_score ){
+                return 1;
+            }else{
+              return 0;	
+            }
+          });
+          category.order = "desc";
+        } 
+        else if(category.order ==="desc") {
+          this.statistics.sort(function(item1, item2) {
+            if ( item1.high_score > item2.high_score ){
+              return -1;
+            }else if( item1.high_score < item2.high_score ){
+                return 1;
+            }else{
+              return 0;	
+            }
+          });
+          category.order = "asc";
+        }
+        break;
+
+    default:
+      confirm("Sorry, somethings went wrong.");
+  }
+
   }
 
 
@@ -42,33 +173,6 @@ export class LeaderboardComponent implements OnInit {
 	    }
      });
   }
-
-  sortByLowScore(): void {
-    this.statistics.sort(function(item1, item2) {
-       if ( item1.low_score < item2.low_score ){
-	    	return -1;
-	    }else if( item1.low_score > item2.low_score ){
-	        return 1;
-	    }else{
-	    	return 0;	
-	    }
-     });
-  }
-
-
-  sortByWins(): void {
-    this.statistics.sort(function(item1, item2) {
-       if ( item1.games_won > item2.games_won ){
-	    	return -1;
-	    }else if( item1.games_won < item2.games_won ){
-	        return 1;
-	    }else{
-	    	return 0;	
-	    }
-     });
-  }
-
-
 
 
 

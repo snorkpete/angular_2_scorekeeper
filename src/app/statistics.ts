@@ -1,6 +1,6 @@
 export class Statistics {
     id: number;
-    user: Object;
+    user: any;
     games_won: number;
     hands_won: number;
     games_played: number;

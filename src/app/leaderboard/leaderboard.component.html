@@ -7,7 +7,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th *ngFor="let category of categories"><span (click)="sort(category)">{{ category }}</span></th>
+        <th *ngFor="let category of categories"><span (click)="sort(category)">{{ category.title }}</span></th>
       </tr>
     </thead>
     <tbody>
