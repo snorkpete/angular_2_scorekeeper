@@ -45,8 +45,9 @@ export class LeaderboardComponent implements OnInit {
   }
 
 
+
   sort(category): void {
-    switch (category.title) {  
+    switch(category.title) {
       case "User":
       if(category.order === "asc" || category.order === null) {
         this.statistics.sort(function(item1, item2) {
@@ -100,7 +101,6 @@ export class LeaderboardComponent implements OnInit {
           category.order = "asc";
         }
         break;
-
       case "Low":
         if(category.order === "asc" || category.order === null) {
           this.statistics.sort(function(item1, item2) {
@@ -156,33 +156,8 @@ export class LeaderboardComponent implements OnInit {
         break;
 
     default:
-      confirm("Sorry, somethings went wrong.");
+      confirm("Sorry, somethings went wrong.");   
+    }
   }
-
-  }
-
-
-  sortByHighScore(): void {
-    this.statistics.sort(function(item1, item2) {
-       if ( item1.high_score < item2.high_score ){
-	    	return -1;
-	    }else if( item1.high_score > item2.high_score ){
-	        return 1;
-	    }else{
-	    	return 0;	
-	    }
-     });
-  }
-
-
 
 }
-
-
-
-
-
-// ngOnInit(): void {
-//     this.statisticsService.getStatistics()
-//       .then(statistics => this.statistics = statistics);
-//   }
