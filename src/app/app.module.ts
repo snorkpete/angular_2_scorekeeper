@@ -12,6 +12,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StatisticsService } from './leaderboard.service';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import { StatisticsService } from './leaderboard.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [ StatisticsService ],
   bootstrap: [AppComponent]

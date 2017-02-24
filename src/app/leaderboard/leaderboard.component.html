@@ -7,10 +7,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>User</th>
-        <th>Wins</th>
-        <th>Low</th>
-        <th>High</th>
+        <th *ngFor="let category of categories"><span (click)="sort(category)">{{ category }}</span></th>
       </tr>
     </thead>
     <tbody>
@@ -23,3 +20,9 @@
     </tbody>
   </table>
 </div>
+
+
+
+
+
+<!--<th (click)="sortByWins()">Wins</th>-->
