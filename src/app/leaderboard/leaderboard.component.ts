@@ -44,7 +44,7 @@ export class LeaderboardComponent implements OnInit {
         .subscribe(
                   data => this.statistics = data,
                   () => this.stopRefreshing(),
-                  () => this.stopRefreshing()
+                  () => this.stopRefreshing(),
               )
   }
 

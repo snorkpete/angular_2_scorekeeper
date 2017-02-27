@@ -5,6 +5,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { LeaderboardComponent }   from './leaderboard/leaderboard.component';
 import { HighScoreComponent }   from './high_score/high-score.component';
 import { ProfileComponent }   from './profile/profile.component';
+import { BooksAndRunCreateComponent } from './books_and_run/books_and_run_create.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'leaderboard',  component: LeaderboardComponent },
   { path: 'high_scores',  component: HighScoreComponent },
   { path: 'profile',  component: ProfileComponent },
+  { path: 'books_and_run/create', component: BooksAndRunCreateComponent },
 //   { path: 'detail/:id', component: HeroDetailComponent },
 ];
 
