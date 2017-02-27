@@ -8,9 +8,10 @@
     <div class="row">
 
         <div class="col-md-6">
+            <my-spinner [isRunning]="isRequesting"></my-spinner>
             <div class="card">
                 <div class="card-block text-center">
-                    <h4 class="card-title">Add Player</h4>
+                    <h5 class="card-title">Add Player</h5>
                 </div>
                 <div *ngFor="let friend of friendList" class="list-group">
                     <button (click)="addPlayer(friend)" type="button" class="list-group-item list-group-item-action">{{ friend.username }}</button>
@@ -26,13 +27,13 @@
 
              <div class="card">
                 <div class="card-block text-center">
-                    <h4 class="card-title">Players</h4>
+                    <h5 class="card-title">Players</h5>
                 </div>
                 <div *ngFor="let player of players" class="list-group">
                     <button (click)="removePlayer(player)" type="button" class="list-group-item list-group-item-action">{{ player.username }}</button>
                 </div>
-                <div class="card-block">
-                    <a href="#" class="card-link">GO!</a>
+                <div *ngIf="players.length > 1" class="card-block">
+                    <a href="#" class="card-link">Go!</a>
                 </div>
             </div>
 

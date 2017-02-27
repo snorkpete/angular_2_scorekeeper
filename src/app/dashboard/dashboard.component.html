@@ -8,10 +8,11 @@
     <div *ngFor="let game of games" class="card">
       <img class="card-img-top" src="{{ game.img_url }}" alt="Card image cap">
       <div class="card-block">
-        <h4 class="card-title">{{ game.title }}</h4>
+        <h5 class="card-title text-center">{{ game.title }}</h5>
         <div class="list-group">
           <button type="button" class="list-group-item list-group-item-action"><a href="{{ game.start_game_url }}">Start A Game</a></button>
-          <button type="button" class="list-group-item list-group-item-action">View Stats</button>
+          <button type="button" class="list-group-item list-group-item-action"><a href="#">Leaderboard</a></button>
+          <button type="button" class="list-group-item list-group-item-action"><a href="#">View Rules</a></button>
         </div>
       </div>
       <div class="card-footer">

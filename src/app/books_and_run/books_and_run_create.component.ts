@@ -15,16 +15,24 @@ import { FriendService } from '../friend.service';
 export class BooksAndRunCreateComponent implements OnInit {
   constructor(private friendService: FriendService) { }
 
+  isRequesting: boolean;
   name: string = 'Aaron';
   friendList: FriendList[] = [];
   players: any[] = [];
+  
+  private stopRefreshing() {
+    this.isRequesting = false;
+  }
 
 
   ngOnInit(): void {
+    this.isRequesting = true;
     this.friendService
       .getFriendList()
         .subscribe(
           data => this.friendList = data,
+          () => this.stopRefreshing(),
+          () => this.stopRefreshing(),
         )
   }
 
