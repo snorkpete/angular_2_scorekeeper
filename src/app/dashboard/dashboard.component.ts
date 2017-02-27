@@ -12,6 +12,25 @@ import { Component } from '@angular/core';
 export class DashboardComponent {
 
   name: string = 'Aaron';
-  names: any[] = [];
+  games: any[] = [
+    {
+      title: "Book and Run",
+      start_game_url: "#",
+      view_stats_url: "#",
+      img_url: "http://placehold.it/236x180",
+    },
+    {
+      title: "Oh Crap",
+      start_game_url: "#",
+      view_stats_url: "#",
+      img_url: "http://placehold.it/236x180",
+    },
+    {
+      title: "Scum",
+      start_game_url: "#",
+      view_stats_url: "#",
+      img_url: "http://placehold.it/236x180",
+    },
+  ];
 
 }

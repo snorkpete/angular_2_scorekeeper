@@ -1,5 +1,75 @@
-<div class="row">
+<div class="container">
+  <div class="row">
     <div class="col-md-12 text-center">
-      <h4>Dashboard</h4>
+      <h4>Choose A Game</h4>
     </div>
   </div>
+  <div class="card-deck">
+    <div *ngFor="let game of games" class="card">
+      <img class="card-img-top" src="{{ game.img_url }}" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{ game.title }}</h4>
+        <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action">Start A Game</button>
+          <button type="button" class="list-group-item list-group-item-action">View Stats</button>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h4>Choose A Game</h4>
+    </div>
+  </div>
+  <div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="http://placehold.it/236x180" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Books and Run</h4>
+       <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action">Start A Game</button>
+        <button type="button" class="list-group-item list-group-item-action">View Stats</button>
+      </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="http://placehold.it/236x180" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Oh Crap</h4>
+       <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action">Start A Game</button>
+        <button type="button" class="list-group-item list-group-item-action">View Stats</button>
+      </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="http://placehold.it/236x180" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Scum</h4>
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action">Start A Game</button>
+        <button type="button" class="list-group-item list-group-item-action">View Stats</button>
+      </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
+</div>-->
