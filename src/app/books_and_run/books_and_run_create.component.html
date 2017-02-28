@@ -8,11 +8,11 @@
     <div class="row">
 
         <div class="col-md-6">
-            <my-spinner [isRunning]="isRequesting"></my-spinner>
             <div class="card">
                 <div class="card-block text-center">
                     <h5 class="card-title">Add Player</h5>
                 </div>
+                <my-spinner [isRunning]="isRequesting"></my-spinner>
                 <div *ngFor="let friend of friendList" class="list-group">
                     <button (click)="addPlayer(friend)" type="button" class="list-group-item list-group-item-action">{{ friend.username }}</button>
                 </div>
