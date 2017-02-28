@@ -33,7 +33,7 @@
                     <button (click)="removePlayer(player)" type="button" class="list-group-item list-group-item-action">{{ player.username }}</button>
                 </div>
                 <div *ngIf="players.length > 1" class="card-block">
-                    <a href="#" class="card-link">Go!</a>
+                    <button (click)="goToGame()" class="btn btn-success">Go!</button>
                 </div>
             </div>
 

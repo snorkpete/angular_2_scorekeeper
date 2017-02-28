@@ -6,6 +6,7 @@ import { LeaderboardComponent }   from './leaderboard/leaderboard.component';
 import { HighScoreComponent }   from './high_score/high-score.component';
 import { ProfileComponent }   from './profile/profile.component';
 import { BooksAndRunCreateComponent } from './books_and_run/books_and_run_create.component';
+import { BooksAndRunPlayComponent } from './books_and_run/books_and_run_play.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'high_scores',  component: HighScoreComponent },
   { path: 'profile',  component: ProfileComponent },
   { path: 'books_and_run/create', component: BooksAndRunCreateComponent },
+  { path: 'books_and_run/play', component: BooksAndRunPlayComponent },
 //   { path: 'detail/:id', component: HeroDetailComponent },
 ];
 
