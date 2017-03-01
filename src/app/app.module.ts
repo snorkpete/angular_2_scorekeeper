@@ -14,6 +14,7 @@ import { BooksAndRunCreateComponent } from './books_and_run/books_and_run_create
 import { BooksAndRunPlayComponent } from './books_and_run/books_and_run_play.component';
 import { StatisticsService } from './leaderboard.service';
 import { FriendService } from './friend.service';
+import { BooksAndRunService } from './books_and_run.service';
 import { SearchPipe } from "./search.pipe";
 import { SpinnerComponent } from './spinner/spinner.component';
 
@@ -37,7 +38,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     HttpModule,
     AppRoutingModule,
   ],
-  providers: [ StatisticsService, FriendService ],
+  providers: [ StatisticsService, FriendService, BooksAndRunService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

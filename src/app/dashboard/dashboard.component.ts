@@ -23,7 +23,7 @@ export class DashboardComponent {
       title: "Oh Crap",
       start_game_url: "#",
       view_stats_url: "#",
-      img_url: "http://placehold.it/236x180",
+      img_url: "../assets/images/oh_crap.jpg",
     },
     {
       title: "Scum",

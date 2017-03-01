@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BooksAndRunService } from '../books_and_run.service';
 
 
 
@@ -10,14 +11,15 @@ import { Component } from '@angular/core';
 })
 
 
-export class BooksAndRunPlayComponent {
+export class BooksAndRunPlayComponent implements OnInit {
+  constructor(private booksAndRunService: BooksAndRunService) { }
 
-  isRequesting: boolean;
+  players = [];
+
   
+  ngOnInit(): void {
+    this.players = this.booksAndRunService.getPlayers();
 
-  private stopRefreshing() {
-    this.isRequesting = false;
   }
-
 
 }
