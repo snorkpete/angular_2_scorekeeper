@@ -39,13 +39,21 @@ export class BooksAndRunPlayComponent implements OnInit {
       round7: null,
       getTotal: function() {
         this.total = 0;
-        if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        return this.total;
+        // if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
+        // if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
+        // if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
+        // if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
+        // if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
+        // if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
+        // if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
       }
     },
     {
@@ -166,6 +174,7 @@ export class BooksAndRunPlayComponent implements OnInit {
   calculateTotalScore(player): number {
     return player.round1 + player.round2 + player.round3 + player.round4 + player.round5 + player.round6 + player.round7;
   }
+  
 
 }
 

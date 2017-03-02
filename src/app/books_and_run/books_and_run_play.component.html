@@ -26,7 +26,7 @@
         <td contenteditable="true" [textContent]="player.round5"   (input)="player.round5 = $event.target.textContent"></td>
         <td contenteditable="true" [textContent]="player.round6"   (input)="player.round6 = $event.target.textContent"></td>
         <td contenteditable="true" [textContent]="player.round7"   (input)="player.round7 = $event.target.textContent"></td>
-        <td>{{ player.total }}</td>
+        <td>{{ player.getTotal() }}</td>
       </tr>
     </tbody>
   </table>
