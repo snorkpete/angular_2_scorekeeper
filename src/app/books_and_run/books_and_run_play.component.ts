@@ -26,155 +26,54 @@ export class BooksAndRunPlayComponent implements OnInit {
     {title: "Round 7"},
   ]
 
-  players = [
-    {
-      username: "Aaron",
-      total: 0,
-      round1: null,
-      round2: null,
-      round3: null,
-      round4: null,
-      round5: null,
-      round6: null,
-      round7: null,
-      getTotal: function() {
+  players = [];
+
+
+
+  ngOnInit(): void {
+    this.players = this.booksAndRunService.getPlayers();
+
+    for(var i=0; i<this.players.length; i++){
+      this.players[i]['total'] = 0;
+      this.players[i]['round1'] = null;
+      this.players[i]['round2'] = null;
+      this.players[i]['round3'] = null;
+      this.players[i]['round4'] = null;
+      this.players[i]['round5'] = null;
+      this.players[i]['round6'] = null;
+      this.players[i]['round7'] = null;
+      this.players[i]['getTotal'] = function(){
         this.total = 0;
         if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-        if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
+        if(!isNaN(parseInt(this.round2))) this.total+=parseInt(this.round2);
+        if(!isNaN(parseInt(this.round3))) this.total+=parseInt(this.round3);
+        if(!isNaN(parseInt(this.round4))) this.total+=parseInt(this.round4);
+        if(!isNaN(parseInt(this.round5))) this.total+=parseInt(this.round5);
+        if(!isNaN(parseInt(this.round6))) this.total+=parseInt(this.round6);
+        if(!isNaN(parseInt(this.round7))) this.total+=parseInt(this.round7);
         return this.total;
-        // if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        // if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        // if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        // if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        // if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        // if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        // if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
       }
-    },
-    {
-      username: "Bethany",
-      round1: null,
-      round2: null,
-      round3: null,
-      round4: null,
-      round5: null,
-      round6: null,
-      round7: null,
-      getTotal: function() {
-        if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
-        return;
-      }
-    },
-    {
-      username: "Jared",
-      round1: null,
-      round2: null,
-      round3: null,
-      round4: null,
-      round5: null,
-      round6: null,
-      round7: null,
-      getTotal: function() {
-        if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
-        return;
-      }
-    },
-    {
-      username: "Bryon",
-      round1: null,
-      round2: null,
-      round3: null,
-      round4: null,
-      round5: null,
-      round6: null,
-      round7: null,
-      getTotal: function() {
-        if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
-        return;
-      }
-    },
-    {
-      username: "Amanda",
-      round1: null,
-      round2: null,
-      round3: null,
-      round4: null,
-      round5: null,
-      round6: null,
-      round7: null,
-      getTotal: function() {
-        if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
-        return;
-      }
-    },
-    {
-      username: "Deborah",
-      round1: null,
-      round2: null,
-      round3: null,
-      round4: null,
-      round5: null,
-      round6: null,
-      round7: null,
-      getTotal: function() {
-        if(parseInt(this.round1) != NaN) this.total+=parseInt(this.round1);
-        if(parseInt(this.round2) != NaN) this.total+=parseInt(this.round2);
-        if(parseInt(this.round3) != NaN) this.total+=parseInt(this.round3);
-        if(parseInt(this.round4) != NaN) this.total+=parseInt(this.round4);
-        if(parseInt(this.round5) != NaN) this.total+=parseInt(this.round5);
-        if(parseInt(this.round6) != NaN) this.total+=parseInt(this.round6);
-        if(parseInt(this.round7) != NaN) this.total+=parseInt(this.round7);
-        return;
-      }
-    },
-  ];
-  
-
-  
-  ngOnInit(): void {
-    // this.players = this.booksAndRunService.getPlayers();
+    }
 
   }
 
 
 
   saveData(players): void {
-    console.log(this.players)
+    console.log(this.calculateRoundWinner('round1'));
   }
 
-  calculateTotalScore(player): number {
-    return player.round1 + player.round2 + player.round3 + player.round4 + player.round5 + player.round6 + player.round7;
+  calculateRoundWinner(round): number {
+    var lowscore = this.players[0].round1;
+    for(var i=0; i<this.players.length; i++){
+      if(this.players[i].round1 < lowscore){
+        lowscore = this.players[i].round1
+      }
+    }
+    return lowscore
   }
   
+
 
 }
 
@@ -314,9 +213,9 @@ export class BooksAndRunPlayComponent implements OnInit {
 //       round7: 54,
 //     },
 //   ];
-  
 
-  
+
+
 //   ngOnInit(): void {
 //     // this.players = this.booksAndRunService.getPlayers();
 
