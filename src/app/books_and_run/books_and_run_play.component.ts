@@ -15,7 +15,15 @@ export class BooksAndRunPlayComponent implements OnInit {
   constructor(private booksAndRunService: BooksAndRunService) { }
 
   players = [];
-  rounds = []
+  rounds = [];
+  roundOneWinner = {};
+  roundTwoWinner = {};
+  roundThreeWinner = {};
+  roundFourWinner = {};
+  roundFiveWinner = {};
+  roundSixWinner = {};
+  roundSevenWinner = {};
+  gameWinner = {};
 
 
 
@@ -41,7 +49,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundOneWinner = winner;
+    this.roundOneWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -49,7 +57,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundTwoWinner = winner;
+    this.roundTwoWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -57,7 +65,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundThreeWinner = winner;
+    this.roundThreeWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -65,7 +73,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundFourWinner = winner;
+    this.roundFourWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -73,7 +81,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundFiveWinner = winner;
+    this.roundFiveWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -81,7 +89,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundSixWinner = winner;
+    this.roundSixWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -89,7 +97,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    roundSevenWinner = winner;
+    this.roundSevenWinner = winner;
 
     winner = this.players[0];
     for(var i=0; i<this.players.length; i++){
@@ -97,10 +105,7 @@ export class BooksAndRunPlayComponent implements OnInit {
         winner = this.players[i]
       }
     }
-    gameWinner = winner;
-
-    console.log(gameWinner);
-
+    this.gameWinner = winner;
 
     
   }
