@@ -40,6 +40,30 @@ export class BooksAndRunService {
         this.players = [];
     }
 
+    prepareGame(){
+        var players = this.getPlayers();
+        var game = {
+            roundOne: [],
+            roundTwo: [],
+            roundThree: [],
+            roundFour: [],
+            roundFive: [],
+            roundSix: [],
+            roundSeven: [],
+        };
+
+        players.forEach(function(player){
+            player['score'] = undefined;
+            for(var round in game){
+                if(game.hasOwnProperty(round)){
+                    game[round].push(player);
+                }
+            }
+        });
+
+        return game;
+    }
+
     preparePlayers(players) {
 
         for(var i=0; i<this.players.length; i++){

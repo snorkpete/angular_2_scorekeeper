@@ -19,9 +19,8 @@ export class BooksAndRunPlayComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.players = this.booksAndRunService.getPlayers();
-    // this.players = this.booksAndRunService.preparePlayers(this.players);
-    // this.rounds = this.booksAndRunService.prepareRounds();
+    this.game = this.booksAndRunService.prepareGame();
+    console.log(this.game);
   }
 
   
