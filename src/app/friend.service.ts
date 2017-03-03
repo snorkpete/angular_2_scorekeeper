@@ -22,7 +22,7 @@ export class FriendService {
 
 
     getFriendList() {
-        return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/users/friendlist/1/')
+        return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/users/friendlist/5/')
             .map(
                 res => res.json().friends as FriendList[],
             )
