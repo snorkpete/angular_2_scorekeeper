@@ -43,13 +43,14 @@ export class BooksAndRunService {
     prepareGame(){
         var players = this.getPlayers();
         var game = {
-            roundOne: [],
-            roundTwo: [],
-            roundThree: [],
-            roundFour: [],
-            roundFive: [],
-            roundSix: [],
-            roundSeven: [],
+            empty: ['empty'],
+            roundOne: ['2 Books'],
+            roundTwo: ['1 Book 1 Run'],
+            roundThree: ['2 Runs'],
+            roundFour: ['3 Books'],
+            roundFive: ['2 Books 1 Run'],
+            roundSix: ['2 Runs 1 Book'],
+            roundSeven: ['3 Runs'],
         };
 
         players.forEach(function(player){
@@ -64,48 +65,9 @@ export class BooksAndRunService {
         return game;
     }
 
-    preparePlayers(players) {
-
-        for(var i=0; i<this.players.length; i++){
-            players[i]['total'] = null;
-            players[i]['round1'] = null;
-            players[i]['round2'] = null;
-            players[i]['round3'] = null;
-            players[i]['round4'] = null;
-            players[i]['round5'] = null;
-            players[i]['round6'] = null;
-            players[i]['round7'] = null;
-            players[i]['getTotal'] = function(){
-                this.total = null;
-                if(!isNaN(parseInt(this.round1))) this.total+=parseInt(this.round1);
-                if(!isNaN(parseInt(this.round2))) this.total+=parseInt(this.round2);
-                if(!isNaN(parseInt(this.round3))) this.total+=parseInt(this.round3);
-                if(!isNaN(parseInt(this.round4))) this.total+=parseInt(this.round4);
-                if(!isNaN(parseInt(this.round5))) this.total+=parseInt(this.round5);
-                if(!isNaN(parseInt(this.round6))) this.total+=parseInt(this.round6);
-                if(!isNaN(parseInt(this.round7))) this.total+=parseInt(this.round7);
-                return this.total;
-            }
-        }
-        return players;
+    getRoundTitles(){
+        return ['', '2 Books', '1 Book 1 Run', '2 Runs', '3 Books', '2 Books 1 Run', '2 Runs 1 Book', '3 Runs'];
     }
-
-    prepareRounds() {
-        var rounds = [
-            {title: ""},
-            {title: "Round 1"},
-            {title: "Round 2"},
-            {title: "Round 3"},
-            {title: "Round 4"},
-            {title: "Round 5"},
-            {title: "Round 6"},
-            {title: "Round 7"},
-        ]
-
-        return rounds;
-    } 
-
-
 }
 
 
