@@ -4,27 +4,26 @@
       <h4>Score</h4>
     </div>
   </div>
-
-    <table id="data-table" class="table table-striped"  *ngFor="let round of game.roundThree">
+  <table id="data-table" class="table table-striped">
+    <thead>
       <tr>
-        <th>{{ obj }}</th>
-        <td>ob</td>
-        <td>24 March</td>
-        <td>14 April</td>
+        <th *ngFor="let round of game">{{ round.roundNumber }}</th>
+        <th>Total</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
-        <th>{{ obj }}</th>
-        <td>Waltz with Strauss</td>
-        <td>The Obelisks</td>
-        <td>The What</td>
+        <td >Aaron</td>
+        <td >54</td>
+        <td >23</td>
+        <td >12</td>
+        <td >65</td>
+        <td >45</td>
+        <td >84</td>
+        <td >72</td>
       </tr>
-      <tr>
-        <th>{{ obj }}</th>
-        <td>Main Hall</td>
-        <td>West Wing</td>
-        <td>Main Hall</td>
-      </tr>
-    </table>
+    </tbody>
+  </table>
   
   <button (click)="calculateStats()">Calc Stats</button>
 

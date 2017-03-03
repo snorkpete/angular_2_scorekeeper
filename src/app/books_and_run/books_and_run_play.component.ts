@@ -14,9 +14,17 @@ import { BooksAndRunService } from '../books_and_run.service';
 export class BooksAndRunPlayComponent implements OnInit {
   constructor(private booksAndRunService: BooksAndRunService) { }
 
-  game = {
+  game = [
+
+    {
+      roundNumber: "",
+      title: "",
+      players: [],
+      winner: [],
+    },
   
-    roundOne: {
+    {
+      roundNumber: 1,
       title: "2 Books",
       players: [
         {
@@ -36,8 +44,11 @@ export class BooksAndRunPlayComponent implements OnInit {
         },
       ],
       winner: undefined,
+      
     },
-    roundTwo: {
+    
+    {
+      roundNumber: 2,
       title: "1 Book 1 Run",
       players: [
         {
@@ -58,7 +69,9 @@ export class BooksAndRunPlayComponent implements OnInit {
       ],
       winner: undefined,
     },
-    roundThree: {
+    
+    {
+      roundNumber: 3,
       title: "2 Runs",
       players: [
         {
@@ -79,7 +92,9 @@ export class BooksAndRunPlayComponent implements OnInit {
       ],
       winner: undefined,
     },
-    roundFour: {
+    
+    {
+      roundNumber: 4,
       title: "3 Books",
       players: [
         {
@@ -100,7 +115,9 @@ export class BooksAndRunPlayComponent implements OnInit {
       ],
       winner: undefined,
     },
-    roundFive: {
+    
+    {
+      roundNumber: 5,
       title: "2 Books 1 Run",
       players: [
         {
@@ -121,7 +138,9 @@ export class BooksAndRunPlayComponent implements OnInit {
       ],
       winner: undefined,
     },
-    roundSix: {
+    
+    {
+      roundNumber: 6,
       title: "2 Runs 1 Book",
       players: [
         {
@@ -142,7 +161,9 @@ export class BooksAndRunPlayComponent implements OnInit {
       ],
       winner: undefined,
     },
-    roundSeven: {
+    
+    {
+      roundNumber: 7,
       title: "3 Runs",
       players: [
         {
@@ -163,8 +184,10 @@ export class BooksAndRunPlayComponent implements OnInit {
       ],
       winner: undefined,
     },
+    
+    
   
-};
+];
 
 
 
