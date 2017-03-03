@@ -1,25 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map'; //REMOVE THIS
-
-export class FriendList {
-    pk: number;
-    user: any;
-    players: any;
-}
-
 
 @Injectable()
 export class BooksAndRunService {
 
-    constructor(private http: Http) { }
-
-    private headers = new Headers({'Content-Type': 'application/json'});
-
     players = [];
-
+    
     getPlayers() {
         return this.players;
     }
@@ -46,11 +33,6 @@ export class BooksAndRunService {
 
             players: [],
             rounds: [
-                {
-                    roundNumber: undefined,
-                    title: undefined,
-                    winner: undefined,
-                },
                 {
                     roundNumber: 1,
                     title: "Round 1",
@@ -92,6 +74,9 @@ export class BooksAndRunService {
                     title: "Round 7",
                     description: "3 Runs",
                     winner: undefined,
+                },
+                {
+                    title: "Total",
                 },
             ],
         }
