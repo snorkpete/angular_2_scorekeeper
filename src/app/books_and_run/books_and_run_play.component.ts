@@ -23,5 +23,8 @@ export class BooksAndRunPlayComponent implements OnInit {
     console.log(this.game);
   }
 
+  calculateStats(game){
+    console.log(game);
+  }
 
 }
