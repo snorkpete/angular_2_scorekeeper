@@ -43,31 +43,89 @@ export class BooksAndRunService {
     prepareGame(){
         var players = this.getPlayers();
         var game = {
-            empty: ['empty'],
-            roundOne: ['2 Books'],
-            roundTwo: ['1 Book 1 Run'],
-            roundThree: ['2 Runs'],
-            roundFour: ['3 Books'],
-            roundFive: ['2 Books 1 Run'],
-            roundSix: ['2 Runs 1 Book'],
-            roundSeven: ['3 Runs'],
-        };
+
+            players: [],
+            rounds: [
+                {
+                    roundNumber: undefined,
+                    title: undefined,
+                    winner: undefined,
+                },
+                {
+                    roundNumber: 1,
+                    title: "Round 1",
+                    description: "2 Books",
+                    winner: undefined,
+                },
+                {
+                    roundNumber: 2,
+                    title: "Round 2",
+                    description: "1 Book 1 Run",
+                    winner: undefined,
+                },
+                {
+                    roundNumber: 3,
+                    title: "Round 3",
+                    description: "2 Runs",
+                    winner: undefined,
+                },
+                {
+                    roundNumber: 4,
+                    title: "Round 4",
+                    description: "3 Books",
+                    winner: undefined,
+                },
+                {
+                    roundNumber: 5,
+                    title: "Round 5",
+                    description: "2 Books 1 Run",
+                    winner: undefined,
+                },
+                {
+                    roundNumber: 6,
+                    title: "Round 6",
+                    description: "2 Runs 1 Book",
+                    winner: undefined,
+                 },
+                {
+                    roundNumber: 7,
+                    title: "Round 7",
+                    description: "3 Runs",
+                    winner: undefined,
+                },
+            ],
+        }
 
         players.forEach(function(player){
-            player['score'] = undefined;
-            for(var round in game){
-                if(game.hasOwnProperty(round)){
-                    game[round].push(player);
+            player['scores'] = {
+                roundOne: undefined,
+                roundTwo: undefined,
+                roundThree: undefined,
+                roundFour: undefined,
+                roundFive: undefined,
+                roundSix: undefined,
+                roundSeven: undefined,
+                getTotal: function(){
+                    var total = 0;
+                    if(!isNaN(parseInt(this.roundOne))) total+=parseInt(this.roundOne);
+                    if(!isNaN(parseInt(this.roundTwo))) total+=parseInt(this.roundTwo);
+                    if(!isNaN(parseInt(this.roundThree))) total+=parseInt(this.roundThree);
+                    if(!isNaN(parseInt(this.roundFour))) total+=parseInt(this.roundFour);
+                    if(!isNaN(parseInt(this.roundFive))) total+=parseInt(this.roundFive);
+                    if(!isNaN(parseInt(this.roundSix))) total+=parseInt(this.roundSix);
+                    if(!isNaN(parseInt(this.roundSeven))) total+=parseInt(this.roundSeven);
+
+                    return total;
                 }
-            }
+
+            };
         });
+        game.players = players;
 
         return game;
     }
 
-    getRoundTitles(){
-        return ['', '2 Books', '1 Book 1 Run', '2 Runs', '3 Books', '2 Books 1 Run', '2 Runs 1 Book', '3 Runs'];
-    }
+
 }
 
 

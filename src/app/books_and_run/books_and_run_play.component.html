@@ -7,20 +7,22 @@
   <table id="data-table" class="table table-striped">
     <thead>
       <tr>
-        <th *ngFor="let round of game">{{ round.roundNumber }}</th>
+        <th *ngFor="let round of game.rounds">{{ round.title }}</th>
         <th>Total</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td >Aaron</td>
-        <td >54</td>
-        <td >23</td>
-        <td >12</td>
-        <td >65</td>
-        <td >45</td>
-        <td >84</td>
-        <td >72</td>
+      <tr *ngFor="let player of game.players">
+        <td>{{ player.username }}</td>
+        <td contenteditable="true" [textContent]="player.scores.roundOne"   (input)="player.scores.roundOne = $event.target.textContent"></td>
+        <td contenteditable="true" [textContent]="player.scores.roundTwo"   (input)="player.scores.roundTwo = $event.target.textContent"></td>
+        <td contenteditable="true" [textContent]="player.scores.roundThree"   (input)="player.scores.roundThree = $event.target.textContent"></td>
+        <td contenteditable="true" [textContent]="player.scores.roundFour"   (input)="player.scores.roundFour = $event.target.textContent"></td>
+        <td contenteditable="true" [textContent]="player.scores.roundFive"   (input)="player.scores.roundFive = $event.target.textContent"></td>
+        <td contenteditable="true" [textContent]="player.scores.roundSix"   (input)="player.scores.roundSix = $event.target.textContent"></td>
+        <td contenteditable="true" [textContent]="player.scores.roundSeven"   (input)="player.scores.roundSeven = $event.target.textContent"></td>
+        <td style="background-color: orange">{{ player.scores.getTotal() }}</td>
+        
       </tr>
     </tbody>
   </table>
@@ -30,7 +32,20 @@
 
 
 
-
+<!--<table id="data-table" class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let round of game">{{ round.roundNumber }}</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let round of game">
+        <td>Aaron</td>
+        <td>25</td>
+      </tr>
+    </tbody>
+  </table>-->
 
 
 
