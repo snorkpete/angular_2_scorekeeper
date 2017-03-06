@@ -110,6 +110,10 @@ export class BooksAndRunService {
         return game;
     }
 
+    incrementGamesPlayed() {
+        
+    }
+
 
 }
 

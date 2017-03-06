@@ -7,10 +7,12 @@ import { HighScoreComponent }   from './high_score/high-score.component';
 import { ProfileComponent }   from './profile/profile.component';
 import { BooksAndRunCreateComponent } from './books_and_run/books_and_run_create.component';
 import { BooksAndRunPlayComponent } from './books_and_run/books_and_run_play.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'login',  component: AuthenticationComponent },
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'leaderboard',  component: LeaderboardComponent },
   { path: 'high_scores',  component: HighScoreComponent },
