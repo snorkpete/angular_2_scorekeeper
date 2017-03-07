@@ -32,7 +32,7 @@ export class AuthenticationComponent{
       contentHeaders.append('Content-Type', 'application/json');
 
       
-      this.http.post('http://localhost:8000/api/auth/token/', JSON.stringify(creds), {headers: contentHeaders})
+      this.http.post('https://django-scorekeeper-api.herokuapp.com/api/auth/token/', JSON.stringify(creds), {headers: contentHeaders})
         .subscribe(
             response => {
                 console.log(response.json());
