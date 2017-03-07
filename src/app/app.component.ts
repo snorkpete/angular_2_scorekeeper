@@ -13,5 +13,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void{
     this.user = JSON.parse(localStorage.getItem('user'));
   }
-  
+
 }

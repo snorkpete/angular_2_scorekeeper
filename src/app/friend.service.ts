@@ -22,11 +22,12 @@ export class FriendService {
 
 
     getFriendList() {
-        return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/users/friendlist/7/')
-            .map(
-                res => res.json().friends as FriendList[],
-            )
-    } 
+      var user = JSON.parse(localStorage.getItem('user'));
+      return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/users/friendlist/' + user.pk + '/')
+          .map(
+              res => res.json().friends as FriendList[],
+          )
+    }
 
 
     private handleError(error: any): Promise<any> {
