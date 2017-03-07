@@ -10,6 +10,37 @@
       <div class="card-block">
         <h5 class="card-title text-center">{{ game.title }}</h5>
         <div class="list-group">
+          <a class="list-group-item list-group-item-action" href="{{ game.start_game_url }}">Start A Game</a>
+          <a class="list-group-item list-group-item-action" href="#">Leaderboard</a>
+          <a class="list-group-item list-group-item-action" href="#">View Rules</a>
+        </div>
+      </div>
+      <div class="card-footer bg-success">
+        <small class="text-muted" style="color: white !important;">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h4>Choose A Game</h4>
+    </div>
+  </div>
+  <div class="card-deck">
+    <div *ngFor="let game of games" class="card">
+      <img class="card-img-top" src="{{ game.img_url }}" alt="Card image cap">
+      <div class="card-block">
+        <h5 class="card-title text-center">{{ game.title }}</h5>
+        <div class="list-group">
           <button type="button" class="list-group-item list-group-item-action"><a href="{{ game.start_game_url }}">Start A Game</a></button>
           <button type="button" class="list-group-item list-group-item-action"><a href="#">Leaderboard</a></button>
           <button type="button" class="list-group-item list-group-item-action"><a href="#">View Rules</a></button>
@@ -20,4 +51,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

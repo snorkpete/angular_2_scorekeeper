@@ -15,7 +15,7 @@ export class DashboardComponent {
   name: string = 'Aaron';
   games: any[] = [
     {
-      title: "Book and Run",
+      title: "Books and Run",
       start_game_url: "http://localhost:4200/books_and_run/create",
       view_stats_url: "#",
       img_url: "../assets/images/books_and_run.jpg",
@@ -30,7 +30,7 @@ export class DashboardComponent {
       title: "Scum",
       start_game_url: "#",
       view_stats_url: "#",
-      img_url: "http://placehold.it/236x180",
+      img_url: "../assets/images/scum.jpg",
     },
   ];
 

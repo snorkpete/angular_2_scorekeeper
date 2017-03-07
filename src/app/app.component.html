@@ -1,4 +1,58 @@
-<div class="container">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Cardly</a>
+    <div class="container">
+      <!-- <a class="navbar-brand" href="#">Cardly</a> -->
+
+      <div class="collapse navbar-collapse" id="navbarColor02" aria-expanded="false">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">DASHBOARD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/leaderboard" routerLinkActive="active">LEADERBOARD</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!user">Login/Signup</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" *ngIf="user">Welcome, {{ user.username }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" *ngIf="user">Logout</a></li>
+          </ul>
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+
+    </div>
+
+</nav>
+
+<!-- <div class="d-flex justify-content-end" style="background-color: #0275d8; color: white;">
+  <div class="mr-auto p-2"><h5>Cardly</h5></div>
+
+  <div class="p-2">My profile</div>
+  <div *ngIf="user" class="p-2">Welcome, {{ user.username }}</div>
+  <div *ngIf="!user" class="p-2">Login</div>
+</div> -->
+
+
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
  <div class="row title">
    <div class="col-md-12">
      <h4>{{ title }}</h4>
@@ -11,9 +65,40 @@
       <a class="links" routerLink="/leaderboard" routerLinkActive="active">Leaderboard</a>
       <a class="links" routerLink="/high_scores" routerLinkActive="active">High Scores</a>
       <a class="links" routerLink="/profile" routerLinkActive="active">Profile</a>
-      <a class="links" routerLink="/" routerLinkActive="active">Welcome, {{ user.username }}</a>
-    </nav>  
-  </div> 
+      <a *ngIf="user" class="links" routerLink="/" routerLinkActive="active">Welcome, {{ user.username }}</a>
+    </nav>
+  </div>
  </div>
 </div>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet>-->
+
+
+<!-- <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Cardly</a>
+
+    <div class="collapse navbar-collapse" id="navbarColor02" aria-expanded="false">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">DASHBOARD <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">LEADERBOARD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PROFILE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">LOGIN</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+</nav> -->
