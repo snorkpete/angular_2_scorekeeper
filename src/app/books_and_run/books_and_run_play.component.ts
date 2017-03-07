@@ -20,6 +20,7 @@ export class BooksAndRunPlayComponent implements OnInit {
 
   ngOnInit(): void {
     this.game = this.booksAndRunService.prepareGame();
+    console.log(this.game);
 
     // if(localStorage.getItem('game') === null) {
     //   this.game = this.booksAndRunService.prepareGame();
