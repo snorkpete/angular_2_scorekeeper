@@ -14,7 +14,7 @@ import { AuthenticationService } from '../authentication.service';
 
 
 export class AuthenticationComponent{
-  constructor(public http: Http) { }
+  constructor(public http: Http, private router: Router) { }
 
 
   user = {};
@@ -37,6 +37,8 @@ export class AuthenticationComponent{
             response => {
                 console.log(response.json());
                 localStorage.setItem('jwt_token', response.json().token);
+                localStorage.setItem('user', JSON.stringify(response.json().user));
+                this.router.navigate(['/dashboard'])
             },
             error => {
                 alert(error.text());
@@ -44,9 +46,6 @@ export class AuthenticationComponent{
             }
         )
   }
-  
-
-
 
 
 }
