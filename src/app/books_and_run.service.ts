@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { Game, Player, Score, Round } from './books_and_run/books_and_run.classes'
 
 
 @Injectable()
 export class BooksAndRunService {
 
-    players = [];
-    
+    players: Player[];
+
     getPlayers() {
         return this.players;
     }
@@ -28,90 +29,78 @@ export class BooksAndRunService {
     }
 
     prepareGame(){
-        var players = this.getPlayers();
-        var game = {
+      // Initialize game variables
+      let players: Player[] = this.getPlayers();
+      let rounds: Round[] = [
+        {
+            roundNumber: 1,
+            title: "Round 1",
+            description: "2 Books",
+            winner: undefined,
+        },
+        {
+            roundNumber: 2,
+            title: "Round 2",
+            description: "1 Book 1 Run",
+            winner: undefined,
+        },
+        {
+            roundNumber: 3,
+            title: "Round 3",
+            description: "2 Runs",
+            winner: undefined,
+        },
+        {
+            roundNumber: 4,
+            title: "Round 4",
+            description: "3 Books",
+            winner: undefined,
+        },
+        {
+            roundNumber: 5,
+            title: "Round 5",
+            description: "2 Books 1 Run",
+            winner: undefined,
+        },
+        {
+            roundNumber: 6,
+            title: "Round 6",
+            description: "2 Runs 1 Book",
+            winner: undefined,
+         },
+        {
+            roundNumber: 7,
+            title: "Round 7",
+            description: "3 Runs",
+            winner: undefined,
+        },
+        {
+            roundNumber: 0,
+            title: "Total",
+            description: "undefined",
+            winner: undefined,
+        },
+      ];
+      let game: Game = {
+        players: [],
+        rounds: [],
+      };
 
-            players: [],
-            rounds: [
-                {
-                    roundNumber: 1,
-                    title: "Round 1",
-                    description: "2 Books",
-                    winner: undefined,
-                },
-                {
-                    roundNumber: 2,
-                    title: "Round 2",
-                    description: "1 Book 1 Run",
-                    winner: undefined,
-                },
-                {
-                    roundNumber: 3,
-                    title: "Round 3",
-                    description: "2 Runs",
-                    winner: undefined,
-                },
-                {
-                    roundNumber: 4,
-                    title: "Round 4",
-                    description: "3 Books",
-                    winner: undefined,
-                },
-                {
-                    roundNumber: 5,
-                    title: "Round 5",
-                    description: "2 Books 1 Run",
-                    winner: undefined,
-                },
-                {
-                    roundNumber: 6,
-                    title: "Round 6",
-                    description: "2 Runs 1 Book",
-                    winner: undefined,
-                 },
-                {
-                    roundNumber: 7,
-                    title: "Round 7",
-                    description: "3 Runs",
-                    winner: undefined,
-                },
-                {
-                    title: "Total",
-                },
-            ],
-        }
+      // Attach a 'scores' property to each player in the game
+      players.forEach(function(player){
+          player['scores'] = new Score(null);
+      });
 
-        players.forEach(function(player){
-            player['scores'] = {
-                roundOne: undefined,
-                roundTwo: undefined,
-                roundThree: undefined,
-                roundFour: undefined,
-                roundFive: undefined,
-                roundSix: undefined,
-                roundSeven: undefined,
-                getTotal: function(){
-                    var total = 0;
-                    if(!isNaN(parseInt(this.roundOne))) total+=parseInt(this.roundOne);
-                    if(!isNaN(parseInt(this.roundTwo))) total+=parseInt(this.roundTwo);
-                    if(!isNaN(parseInt(this.roundThree))) total+=parseInt(this.roundThree);
-                    if(!isNaN(parseInt(this.roundFour))) total+=parseInt(this.roundFour);
-                    if(!isNaN(parseInt(this.roundFive))) total+=parseInt(this.roundFive);
-                    if(!isNaN(parseInt(this.roundSix))) total+=parseInt(this.roundSix);
-                    if(!isNaN(parseInt(this.roundSeven))) total+=parseInt(this.roundSeven);
+      // Attach the initalized variables to the game.
+      game.players = players;
+      game.rounds = rounds;
 
-                    return total;
-                }
+      return game;
 
-            };
-        });
-        game.players = players;
-
-        return game;
     }
 
     incrementGamesPlayed() {
-        
+
     }
 
 
@@ -143,45 +132,85 @@ export class BooksAndRunService {
 
 
 
-
-
-
-
-// import { Injectable } from '@angular/core';
-// import { Headers, Http } from '@angular/http';
-// import { FriendList } from './friendlist';
-
-// import 'rxjs/add/operator/toPromise';
-// import 'rxjs/add/operator/map'; //REMOVE THIS
-
-
-
-// @Injectable()
-// export class BooksAndRunService {
-
-//     private headers = new Headers({'Content-Type': 'application/json'});
-//     //private statisticsUrl = 'asdf/asdf';
-
-
-//     constructor(private http: Http) { }
-
-
-
-//     getFriendList() {
-//         return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/users/friendlist/1/')
-//             .map(
-//                 res => res.json().friends as FriendList[],
-//             )
-//     } 
-
-
-//     private handleError(error: any): Promise<any> {
-//         console.error('An error occurred', error); // for demo purposes only
-//         return Promise.reject(error.message || error);
-//      }
-
-
-
-
-
+// prepareGame(){
+//     var players = this.getPlayers();
+//     var game = {
+//
+//         players: [],
+//         rounds: [
+//             {
+//                 roundNumber: 1,
+//                 title: "Round 1",
+//                 description: "2 Books",
+//                 winner: undefined,
+//             },
+//             {
+//                 roundNumber: 2,
+//                 title: "Round 2",
+//                 description: "1 Book 1 Run",
+//                 winner: undefined,
+//             },
+//             {
+//                 roundNumber: 3,
+//                 title: "Round 3",
+//                 description: "2 Runs",
+//                 winner: undefined,
+//             },
+//             {
+//                 roundNumber: 4,
+//                 title: "Round 4",
+//                 description: "3 Books",
+//                 winner: undefined,
+//             },
+//             {
+//                 roundNumber: 5,
+//                 title: "Round 5",
+//                 description: "2 Books 1 Run",
+//                 winner: undefined,
+//             },
+//             {
+//                 roundNumber: 6,
+//                 title: "Round 6",
+//                 description: "2 Runs 1 Book",
+//                 winner: undefined,
+//              },
+//             {
+//                 roundNumber: 7,
+//                 title: "Round 7",
+//                 description: "3 Runs",
+//                 winner: undefined,
+//             },
+//             {
+//                 title: "Total",
+//             },
+//         ],
+//     }
+//
+//     players.forEach(function(player){
+//         player['scores'] = {
+//             roundOne: undefined,
+//             roundTwo: undefined,
+//             roundThree: undefined,
+//             roundFour: undefined,
+//             roundFive: undefined,
+//             roundSix: undefined,
+//             roundSeven: undefined,
+//             getTotal: function(){
+//                 var total = 0;
+//                 if(!isNaN(parseInt(this.roundOne))) total+=parseInt(this.roundOne);
+//                 if(!isNaN(parseInt(this.roundTwo))) total+=parseInt(this.roundTwo);
+//                 if(!isNaN(parseInt(this.roundThree))) total+=parseInt(this.roundThree);
+//                 if(!isNaN(parseInt(this.roundFour))) total+=parseInt(this.roundFour);
+//                 if(!isNaN(parseInt(this.roundFive))) total+=parseInt(this.roundFive);
+//                 if(!isNaN(parseInt(this.roundSix))) total+=parseInt(this.roundSix);
+//                 if(!isNaN(parseInt(this.roundSeven))) total+=parseInt(this.roundSeven);
+//
+//                 return total;
+//             }
+//
+//         };
+//     });
+//     game.players = players;
+//
+//     return game;
 // }
