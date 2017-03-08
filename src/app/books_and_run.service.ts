@@ -99,6 +99,29 @@ export class BooksAndRunService {
 
     }
 
+    restoreGame() {
+      var game;
+      game = JSON.parse(localStorage.getItem('game'));
+
+      game.players.forEach(function(player){
+        player.scores.getTotal = function(){
+          let total = 0;
+          if(!isNaN(parseInt(this.roundOne))) total+=parseInt(this.roundOne);
+          if(!isNaN(parseInt(this.roundTwo))) total+=parseInt(this.roundTwo);
+          if(!isNaN(parseInt(this.roundThree))) total+=parseInt(this.roundThree);
+          if(!isNaN(parseInt(this.roundFour))) total+=parseInt(this.roundFour);
+          if(!isNaN(parseInt(this.roundFive))) total+=parseInt(this.roundFive);
+          if(!isNaN(parseInt(this.roundSix))) total+=parseInt(this.roundSix);
+          if(!isNaN(parseInt(this.roundSeven))) total+=parseInt(this.roundSeven);
+
+          return total;
+        };
+      });
+
+      return game;
+
+    }
+
     incrementGamesPlayed() {
 
     }

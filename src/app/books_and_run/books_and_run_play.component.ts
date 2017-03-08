@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterContentInit, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 import { BooksAndRunService } from '../books_and_run.service';
 import { Score } from './books_and_run.classes';
 
@@ -12,7 +12,7 @@ import { Score } from './books_and_run.classes';
 })
 
 
-export class BooksAndRunPlayComponent implements OnInit {
+export class BooksAndRunPlayComponent implements OnInit, AfterViewChecked {
   constructor(private booksAndRunService: BooksAndRunService) { }
 
   game = { players: []};
@@ -20,19 +20,21 @@ export class BooksAndRunPlayComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.game = this.booksAndRunService.prepareGame();
-    console.log(this.game);
+    // this.game = this.booksAndRunService.prepareGame();
+    // console.log(this.game);
+    var game: any;
 
-    // if(localStorage.getItem('game') === null) {
-    //   this.game = this.booksAndRunService.prepareGame();
-    //   localStorage.setItem('game', JSON.stringify(this.game));
-    // } else {
-    //   this.game = JSON.parse(localStorage.getItem('game'));
-    // };
+    if(localStorage.getItem('game') === null) {
+      this.game = this.booksAndRunService.prepareGame();
+      localStorage.setItem('game', JSON.stringify(this.game));
+    } else {
+        this.game = this.booksAndRunService.restoreGame();
+    };
+
   }
 
-  calculateStats(game){
-    console.log(game);
+  ngAfterViewChecked() {
+    localStorage.setItem('game', JSON.stringify(this.game));
   }
 
 }
