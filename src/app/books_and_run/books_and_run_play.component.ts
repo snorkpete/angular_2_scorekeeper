@@ -26,7 +26,7 @@ export class BooksAndRunPlayComponent implements OnInit, AfterViewChecked {
 
     if(localStorage.getItem('game') === null) {
       this.game = this.booksAndRunService.prepareGame();
-      localStorage.setItem('game', JSON.stringify(this.game));
+      this.booksAndRunService.saveGame(this.game);
     } else {
         this.game = this.booksAndRunService.restoreGame();
     };
@@ -34,7 +34,7 @@ export class BooksAndRunPlayComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    localStorage.setItem('game', JSON.stringify(this.game));
+    this.booksAndRunService.saveGame(this.game);
   }
 
 }

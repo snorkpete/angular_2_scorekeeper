@@ -122,6 +122,10 @@ export class BooksAndRunService {
 
     }
 
+    saveGame(game) {
+      localStorage.setItem('game', JSON.stringify(game));
+    }
+
     incrementGamesPlayed() {
 
     }
