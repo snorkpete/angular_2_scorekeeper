@@ -20,7 +20,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!user">Login/Signup</a></li>
             <li class="nav-item"><a class="nav-link" href="#" *ngIf="user">Welcome, {{ user.username }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#" *ngIf="user">Logout</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" *ngIf="user" (click)="logout()">Logout</a></li>
           </ul>
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
