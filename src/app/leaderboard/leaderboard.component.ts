@@ -62,11 +62,11 @@ export class LeaderboardComponent implements OnInit {
           }else if( item1.user.username > item2.user.username ){
               return 1;
           }else{
-            return 0;	
+            return 0;
           }
         });
         category.order = "desc";
-      } 
+      }
       else {
         stats.reverse()
         category.order = 'asc';
@@ -80,11 +80,11 @@ export class LeaderboardComponent implements OnInit {
             }else if( item1.games_won > item2.games_won ){
                 return 1;
             }else{
-              return 0;	
+              return 0;
             }
           });
           category.order = "desc";
-        } 
+        }
         else {
         stats.reverse()
         category.order = 'asc';
@@ -98,16 +98,16 @@ export class LeaderboardComponent implements OnInit {
             }else if( item1.low_score > item2.low_score ){
                 return 1;
             }else{
-              return 0;	
+              return 0;
             }
           });
           category.order = "desc";
-        } 
+        }
         else {
         stats.reverse()
         category.order = 'asc';
       }
-        break;  
+        break;
       case "High":
         if(category.order === "asc" || category.order === null) {
           stats.sort(function(item1, item2) {
@@ -116,11 +116,11 @@ export class LeaderboardComponent implements OnInit {
             }else if( item1.high_score > item2.high_score ){
                 return 1;
             }else{
-              return 0;	
+              return 0;
             }
           });
           category.order = "desc";
-        } 
+        }
         else {
         stats.reverse()
         category.order = 'asc';
@@ -128,7 +128,7 @@ export class LeaderboardComponent implements OnInit {
         break;
 
     default:
-      confirm("Sorry, somethings went wrong.");   
+      confirm("Sorry, somethings went wrong.");
     }
   }
 

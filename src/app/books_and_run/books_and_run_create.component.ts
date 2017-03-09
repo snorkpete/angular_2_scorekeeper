@@ -21,7 +21,7 @@ export class BooksAndRunCreateComponent implements OnInit {
   name: string = 'Aaron';
   friendList: FriendList[] = [];
   players: any[] = [];
-  
+
   private stopRefreshing() {
     this.isRequesting = false;
   }
@@ -59,7 +59,7 @@ export class BooksAndRunCreateComponent implements OnInit {
     console.log("Going to game")
     this.router.navigate(['/books_and_run/play'])
   }
-  
+
 
 
 
@@ -120,7 +120,7 @@ export class BooksAndRunCreateComponent implements OnInit {
 //   name: string = 'Aaron';
 //   friendList: FriendList[] = [];
 //   players: any[] = [];
-  
+
 //   private stopRefreshing() {
 //     this.isRequesting = false;
 //   }
