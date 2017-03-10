@@ -6,14 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BooksAndRunModule } from './books_and_run/books_and_run.module';
 import { LeaderboardModule } from './leaderboard/leaderboard.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 import { SharedModule } from './shared/shared.module';
 
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { FriendService } from './friend.service';
-import { AuthenticationService } from './authentication.service';
 
 
 
@@ -21,7 +20,6 @@ import { AuthenticationService } from './authentication.service';
   declarations: [
     AppComponent,
     DashboardComponent,
-    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +28,10 @@ import { AuthenticationService } from './authentication.service';
     AppRoutingModule,
     BooksAndRunModule,
     LeaderboardModule,
+    AuthenticationModule,
     SharedModule,
   ],
-  providers: [ FriendService, AuthenticationService ],
+  providers: [ FriendService ],
   bootstrap: [AppComponent]
 })
 

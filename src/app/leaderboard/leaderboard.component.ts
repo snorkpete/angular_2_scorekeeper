@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Statistics } from '../statistics';
+import { Statistics } from './statistics';
 import { LeaderboardService } from './leaderboard.service';
 
 
