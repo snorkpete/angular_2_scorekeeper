@@ -56,7 +56,6 @@ export class BooksAndRunCreateComponent implements OnInit {
   }
 
   goToGame(): void {
-    console.log("Going to game")
     this.router.navigate(['/books_and_run/play'])
   }
 
