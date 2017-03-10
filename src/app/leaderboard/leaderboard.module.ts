@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -8,15 +8,18 @@ import { LeaderboardComponent } from './leaderboard.component';
 
 import { LeaderboardService } from './leaderboard.service';
 
+import { LeaderboardRouting } from './leaderboard.router';
+
 
 @NgModule({
   declarations: [
     LeaderboardComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule,
     SharedModule,
+    LeaderboardRouting,
   ],
   providers: [ LeaderboardService, ],
 })

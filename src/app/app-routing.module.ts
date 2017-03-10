@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login',  component: AuthenticationComponent },
   { path: 'dashboard',  component: DashboardComponent },
-  { path: 'leaderboard',  component: LeaderboardComponent },
+  { path: 'leaderboard',  loadChildren: './leaderboard/leaderboard.module#LeaderboardModule' },
   { path: 'books_and_run/create', component: BooksAndRunCreateComponent },
   { path: 'books_and_run/play', component: BooksAndRunPlayComponent },
 ];

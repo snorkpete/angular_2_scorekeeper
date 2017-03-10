@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BooksAndRunModule } from './books_and_run/books_and_run.module';
-import { LeaderboardModule } from './leaderboard/leaderboard.module';
+// import { LeaderboardModule } from './leaderboard/leaderboard.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { FriendService } from './friend.service';
+
 
 
 
@@ -26,7 +27,7 @@ import { FriendService } from './friend.service';
     HttpModule,
     AppRoutingModule,
     BooksAndRunModule,
-    LeaderboardModule,
+    // LeaderboardModule,
     AuthenticationModule,
     DashboardModule,
     SharedModule,

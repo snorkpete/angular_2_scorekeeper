@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { AuthenticationService } from './authentication.service';
     AuthenticationComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     RouterModule,
   ],
   providers: [ AuthenticationService, ],
