@@ -4,7 +4,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'; //REMOVE THIS
 
-import { Statistics } from '../statistics';
+import { Statistics } from './statistics';
 
 
 
