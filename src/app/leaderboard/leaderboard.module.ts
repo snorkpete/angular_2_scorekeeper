@@ -8,7 +8,7 @@ import { LeaderboardComponent } from './leaderboard.component';
 
 import { LeaderboardService } from './leaderboard.service';
 
-import { LeaderboardRouting } from './leaderboard.router';
+import { LeaderboardRouter } from './leaderboard.router';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { LeaderboardRouting } from './leaderboard.router';
     CommonModule,
     FormsModule,
     SharedModule,
-    LeaderboardRouting,
+    LeaderboardRouter,
   ],
   providers: [ LeaderboardService, ],
 })

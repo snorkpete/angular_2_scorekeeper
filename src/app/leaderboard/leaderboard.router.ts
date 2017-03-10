@@ -9,4 +9,4 @@ const routes: Routes = [
 ]
 
 
-export const LeaderboardRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export const LeaderboardRouter: ModuleWithProviders = RouterModule.forChild(routes);
