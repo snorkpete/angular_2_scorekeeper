@@ -12,7 +12,6 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
-import { StatisticsService } from './leaderboard.service';
 import { FriendService } from './friend.service';
 import { AuthenticationService } from './authentication.service';
 
@@ -33,7 +32,9 @@ import { AuthenticationService } from './authentication.service';
     LeaderboardModule,
     SharedModule,
   ],
-  providers: [ StatisticsService, FriendService, AuthenticationService ],
+  providers: [ FriendService, AuthenticationService ],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

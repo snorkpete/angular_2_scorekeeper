@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-
 
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SearchPipe } from './search.pipe';
@@ -14,7 +12,6 @@ import { SearchPipe } from './search.pipe';
   ],
   imports: [
     BrowserModule,
-    // FormsModule,
   ],
   exports: [
     SpinnerComponent,

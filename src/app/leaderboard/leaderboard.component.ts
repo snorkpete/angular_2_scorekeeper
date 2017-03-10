@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Statistics } from '../statistics';
-import { StatisticsService } from '../leaderboard.service';
+import { LeaderboardService } from './leaderboard.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { StatisticsService } from '../leaderboard.service';
 
 
 export class LeaderboardComponent implements OnInit {
-  constructor(private statisticsService: StatisticsService) { }
+  constructor(private leaderboardService: LeaderboardService) { }
 
   isRequesting: boolean;
   statistics: Statistics[] = [];
@@ -39,7 +39,7 @@ export class LeaderboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isRequesting = true;
-     this.statisticsService
+     this.leaderboardService
       .getStatistics()
         .subscribe(
                   data => this.statistics = data,

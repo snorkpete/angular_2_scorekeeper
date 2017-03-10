@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'leaderboard',  component: LeaderboardComponent },
   { path: 'books_and_run/create', component: BooksAndRunCreateComponent },
   { path: 'books_and_run/play', component: BooksAndRunPlayComponent },
-//   { path: 'detail/:id', component: HeroDetailComponent },
 ];
 
 

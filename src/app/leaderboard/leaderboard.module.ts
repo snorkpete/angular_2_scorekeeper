@@ -5,20 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 import { LeaderboardComponent } from './leaderboard.component';
-// import { SearchPipe } from "../search.pipe";
 
+import { LeaderboardService } from './leaderboard.service';
 
 
 @NgModule({
   declarations: [
     LeaderboardComponent,
-    // SearchPipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [ LeaderboardService, ],
 })
+
+
 export class LeaderboardModule { }

@@ -4,12 +4,12 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'; //REMOVE THIS
 
-import { Statistics } from './statistics';
+import { Statistics } from '../statistics';
 
 
 
 @Injectable()
-export class StatisticsService {
+export class LeaderboardService {
 
     private headers = new Headers({'Content-Type': 'application/json'});
     //private statisticsUrl = 'asdf/asdf';
@@ -22,7 +22,7 @@ export class StatisticsService {
     getStatistics() {
         return this.http.get('https://django-scorekeeper-api.herokuapp.com/api/books_and_run/statistics/')
             .map(res => res.json() as Statistics[])
-    } 
+    }
 
 
     private handleError(error: any): Promise<any> {
