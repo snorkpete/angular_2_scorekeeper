@@ -23,14 +23,8 @@ export class AuthenticationService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        this.http.post('https://django-scorekeeper-api.herokuapp.com/api/auth/get_token/', JSON.stringify(creds), {headers: headers})
-          .subscribe(
-            response => {
-              localStorage.setItem('jwt_token', response.json().token);
-              localStorage.setItem('user', JSON.stringify(response.json().user));
-              // this.router.navigate(['/dashboard']);
-            }
-          )
+        return this.http.post('https://django-scorekeeper-api.herokuapp.com/api/auth/get_token/', JSON.stringify(creds), {headers: headers})
+
     }
 
     clearToken() {
@@ -47,7 +41,7 @@ export class AuthenticationService {
       this.http.post('https://django-scorekeeper-api.herokuapp.com/api/auth/verifyToken/', token, {headers: headers})
         .subscribe(
           response => {
-            console.log(response);
+            
           }
         )
     }
@@ -58,3 +52,28 @@ export class AuthenticationService {
      }
 
 }
+
+
+
+
+
+
+
+// getToken(username, password) {console.log('getting token');
+//     var creds = {
+//       username: username,
+//       password: password,
+//     }
+//
+//     var headers = new Headers();
+//     headers.append('Content-Type', 'application/json');
+//
+//     this.http.post('https://django-scorekeeper-api.herokuapp.com/api/auth/get_token/', JSON.stringify(creds), {headers: headers})
+//       .subscribe(
+//         response => {
+//           localStorage.setItem('jwt_token', response.json().token);
+//           localStorage.setItem('user', JSON.stringify(response.json().user));
+//           // this.router.navigate(['/dashboard']);
+//         }
+//       )
+// }
