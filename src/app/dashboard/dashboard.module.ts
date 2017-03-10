@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
 
+import { DashboardRouter } from './dashboard.router';
+
 
 @NgModule({
   declarations: [
@@ -12,6 +14,7 @@ import { DashboardComponent } from './dashboard.component';
   imports: [
     CommonModule,
     RouterModule,
+    DashboardRouter,
   ],
   providers: [],
 })
