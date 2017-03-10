@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -19,7 +18,6 @@ import { BooksAndRunService } from './books_and_run.service';
   imports: [
     BrowserModule,
     SharedModule,
-    // FormsModule,
   ],
   providers: [  FriendService, BooksAndRunService ],
 })

@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 
 
-import { SpinnerComponent } from './spinner/spinner.component'
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
   declarations: [
     SpinnerComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -16,6 +18,7 @@ import { SpinnerComponent } from './spinner/spinner.component'
   ],
   exports: [
     SpinnerComponent,
+    SearchPipe,
   ],
   providers: [],
 })
