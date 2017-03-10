@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, AfterContentInit, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
-import { BooksAndRunService } from '../books_and_run.service';
+import { BooksAndRunService } from './books_and_run.service';
 import { Score } from './books_and_run.classes';
 
 

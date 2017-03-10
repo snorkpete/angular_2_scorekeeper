@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { FriendList } from '../friendlist';
 import { FriendService } from '../friend.service';
-import { BooksAndRunService } from '../books_and_run.service';
+import { BooksAndRunService } from './books_and_run.service';
 
 
 @Component({
