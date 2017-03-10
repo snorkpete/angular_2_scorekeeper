@@ -16,7 +16,7 @@ export class DashboardComponent {
   games: any[] = [
     {
       title: "Books and Run",
-      start_game_url: "http://localhost:4200/books_and_run/create",
+      start_game_url: "/books_and_run/create",
       view_stats_url: "#",
       img_url: "../assets/images/books_and_run.jpg",
     },
