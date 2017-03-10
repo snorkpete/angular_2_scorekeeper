@@ -14,7 +14,7 @@ export class AuthenticationService {
     constructor(private http: Http, private router: Router) { }
 
 
-    getToken(username, password) {
+    getToken(username, password) {console.log('getting token');
         var creds = {
           username: username,
           password: password,
@@ -28,7 +28,7 @@ export class AuthenticationService {
             response => {
               localStorage.setItem('jwt_token', response.json().token);
               localStorage.setItem('user', JSON.stringify(response.json().user));
-              this.router.navigate(['/dashboard']);
+              // this.router.navigate(['/dashboard']);
             }
           )
     }
@@ -57,21 +57,4 @@ export class AuthenticationService {
         return Promise.reject(error.message || error);
      }
 
-
-
-
-
 }
-
-
-
-
-
-
-
-// getToken(user) {
-//     return this.http.get('localhost:8000/api/auth/token/')
-//         .map(
-//             res => res.json().friends,
-//         )
-// }

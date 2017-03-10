@@ -14,14 +14,14 @@ import { AuthenticationService } from './authentication.service';
 export class AuthenticationComponent{
   constructor(private authenticationService: AuthenticationService) { }
 
-  login(event, username, password) {
-      event.preventDefault();
-      this.authenticationService.getToken(username, password)
-  }
+  // login(event, username, password) {
+  //     event.preventDefault();
+  //     this.authenticationService.getToken(username, password)
+  // }
 
-  logout() {
-    this.authenticationService.clearToken();
-  }
+  // logout() {
+  //   this.authenticationService.clearToken();
+  // }
 
 
 }

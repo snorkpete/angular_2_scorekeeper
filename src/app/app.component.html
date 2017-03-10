@@ -18,12 +18,20 @@
         </ul>
         <form class="form-inline">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!user">Login/Signup</a></li>
+            <li class="nav-item" *ngIf="!user">
+              <form role="form" (submit)="login($event, username.value, password.value)">
+                <div class="form-group">
+                  <input type="text" #username class="form-control input-sm" id="username" placeholder="Username">
+                  <input type="password" #password class="form-control input-sm" id="password" placeholder="Password">
+                  <button type="submit" class="btn btn-info">Login</button>
+                </div>
+              </form>
+            </li>
             <li class="nav-item"><a class="nav-link" href="#" *ngIf="user">Welcome, {{ user.username }}</a></li>
             <li class="nav-item"><a class="nav-link" href="#" *ngIf="user" (click)="logout()">Logout</a></li>
           </ul>
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button> -->
         </form>
       </div>
 

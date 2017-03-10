@@ -13,7 +13,13 @@ export class AppComponent implements OnInit {
   user = {};
 
   ngOnInit(): void{
+    console.log('Executing ngOnInit of app.component...')
     this.user = JSON.parse(localStorage.getItem('user'));
+  }
+
+  login(event, username, password) {
+      event.preventDefault();
+      this.authenticationService.getToken(username, password)
   }
 
   logout(): void {
