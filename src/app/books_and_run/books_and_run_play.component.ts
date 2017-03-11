@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, AfterContentInit, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { BooksAndRunService } from './books_and_run.service';
 import { Score } from './books_and_run.classes';
 
@@ -13,15 +13,13 @@ import { Score } from './books_and_run.classes';
 
 
 export class BooksAndRunPlayComponent implements OnInit, AfterViewChecked {
-  constructor(private booksAndRunService: BooksAndRunService) { }
+  constructor(public booksAndRunService: BooksAndRunService) { }
 
   game = { players: []};
 
 
 
   ngOnInit(): void {
-    // this.game = this.booksAndRunService.prepareGame();
-    // console.log(this.game);
     var game: any;
 
     if(localStorage.getItem('game') === null) {

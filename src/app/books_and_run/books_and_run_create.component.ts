@@ -15,7 +15,7 @@ import { BooksAndRunService } from './books_and_run.service';
 
 
 export class BooksAndRunCreateComponent implements OnInit {
-  constructor(private friendService: FriendService, private booksAndRunService: BooksAndRunService, private router: Router) { }
+  constructor(public friendService: FriendService, private booksAndRunService: BooksAndRunService, private router: Router) { }
 
   isRequesting: boolean;
   name: string = 'Aaron';

@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { FriendService } from './friend.service';
-
+import { BooksAndRunService } from './books_and_run/books_and_run.service';
 
 
 
@@ -26,7 +26,7 @@ import { FriendService } from './friend.service';
     AuthenticationModule,
     SharedModule,
   ],
-  providers: [ FriendService ],
+  providers: [ FriendService, BooksAndRunService ],
   bootstrap: [AppComponent]
 })
 
