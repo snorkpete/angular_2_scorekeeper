@@ -11,4 +11,4 @@ const routes: Routes = [
 ]
 
 
-export const BooksAndRunRouter: ModuleWithProviders = RouterModule.forChild(routes);
+export class BooksAndRunRouter {};
