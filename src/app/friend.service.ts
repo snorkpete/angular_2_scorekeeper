@@ -10,7 +10,9 @@ import { FriendList } from './friendlist';
 
 @Injectable()
 export class FriendService {
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    console.log('friend.service instantiated...');
+  }
 
   private headers = new Headers({ 'Content-Type': 'application/json' });
   //private statisticsUrl = 'asdf/asdf';

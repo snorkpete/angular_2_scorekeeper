@@ -15,9 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void{
     this.user = JSON.parse(localStorage.getItem('user'));
-    console.log('initting');
     if(localStorage.getItem('game')) this.gameExists = true;
-    console.log(this.gameExists);
   }
 
   login(event, username, password) {

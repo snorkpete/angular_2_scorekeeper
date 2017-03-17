@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BooksAndRunCreateComponent } from './books_and_run_create.component';
 import { BooksAndRunPlayComponent } from './books_and_run_play.component';
 import { BooksAndRunService } from './books_and_run.service';
+import { FriendService } from '../friend.service';
 
 import { BooksAndRunRouter } from './books_and_run.router';
 
@@ -21,7 +22,7 @@ import { BooksAndRunRouter } from './books_and_run.router';
     SharedModule,
     // BooksAndRunRouter,
   ],
-  providers: [ BooksAndRunService ],
+  providers: [ FriendService, BooksAndRunService ],
 })
 
 
