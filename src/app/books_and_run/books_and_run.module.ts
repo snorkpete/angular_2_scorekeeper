@@ -9,6 +9,7 @@ import { BooksAndRunService } from './books_and_run.service';
 import { FriendService } from '../friend.service';
 
 import { BooksAndRunRouter } from './books_and_run.router';
+import {BooksAndRunRootComponent} from "./books_and_run_root.component";
 
 
 
@@ -16,6 +17,7 @@ import { BooksAndRunRouter } from './books_and_run.router';
   declarations: [
     BooksAndRunCreateComponent,
     BooksAndRunPlayComponent,
+    BooksAndRunRootComponent,
   ],
   imports: [
     CommonModule,
