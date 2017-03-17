@@ -7,10 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { SharedModule } from './shared/shared.module';
 
-
 import { AppComponent } from './app.component';
 import { FriendService } from './friend.service';
-import { BooksAndRunService } from './books_and_run/books_and_run.service';
+import { BooksAndRunModule } from './books_and_run/books_and_run.module';
 
 
 
@@ -25,8 +24,9 @@ import { BooksAndRunService } from './books_and_run/books_and_run.service';
     AppRoutingModule,
     AuthenticationModule,
     SharedModule,
+    BooksAndRunModule,
   ],
-  providers: [ FriendService, BooksAndRunService ],
+  providers: [ FriendService ],
   bootstrap: [AppComponent]
 })
 
