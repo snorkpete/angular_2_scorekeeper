@@ -22,6 +22,8 @@ import { BooksAndRunRouter } from './books_and_run.router';
     SharedModule,
     BooksAndRunRouter,
   ],
+  exports: [
+  ],
   providers: [ FriendService, BooksAndRunService ],
 })
 

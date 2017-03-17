@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login',  component: AuthenticationComponent },
   { path: 'dashboard',  loadChildren: './dashboard/dashboard.module#DashboardModule' },
   { path: 'leaderboard',  loadChildren: './leaderboard/leaderboard.module#LeaderboardModule' },
-  { path: 'books_and_run', loadChildren: './books_and_run/books_and_run.module#BooksAndRunModule' },
+  //{ path: 'books_and_run', loadChildren: './books_and_run/books_and_run.module#BooksAndRunModule' },
   //{ path: 'books_and_run/create', component: BooksAndRunCreateComponent },
   //{ path: 'books_and_run/play', component: BooksAndRunPlayComponent },
 ];
