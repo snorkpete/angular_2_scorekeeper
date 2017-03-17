@@ -20,7 +20,7 @@ import { BooksAndRunRouter } from './books_and_run.router';
   imports: [
     CommonModule,
     SharedModule,
-    // BooksAndRunRouter,
+    BooksAndRunRouter,
   ],
   providers: [ FriendService, BooksAndRunService ],
 })

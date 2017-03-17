@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { BooksAndRunCreateComponent } from './books_and_run_create.component';
@@ -11,4 +11,10 @@ const routes: Routes = [
 ]
 
 
+@NgModule({
+  imports: [
+    RouterModule.forChild(routes),
+    ],
+  exports: [ RouterModule ]
+})
 export class BooksAndRunRouter {};
