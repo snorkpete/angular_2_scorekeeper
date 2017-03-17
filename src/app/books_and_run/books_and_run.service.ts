@@ -6,10 +6,11 @@ import { Game, Player, Score, Round } from './books_and_run.classes'
 @Injectable()
 export class BooksAndRunService {
     constructor(){
+      debugger;
       console.log('books_and_run.service instantiated...');
     }
 
-    players: Player[];
+    players: Player[] = [];
 
     getPlayers() {
         return this.players;

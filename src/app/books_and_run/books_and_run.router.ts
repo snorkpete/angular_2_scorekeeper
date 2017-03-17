@@ -6,8 +6,8 @@ import { BooksAndRunPlayComponent } from './books_and_run_play.component';
 
 
 const routes: Routes = [
-  {path: 'books_and_run/create', component: BooksAndRunCreateComponent},
-  {path: 'books_and_run/play', component: BooksAndRunPlayComponent},
+  {path: 'create', component: BooksAndRunCreateComponent},
+  {path: 'play', component: BooksAndRunPlayComponent},
 ]
 
 

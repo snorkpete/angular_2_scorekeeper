@@ -20,6 +20,7 @@ export class BooksAndRunPlayComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit(): void {
+    debugger;
     var game: any;
 
     if(localStorage.getItem('game') === null) {
