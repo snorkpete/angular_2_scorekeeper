@@ -7,6 +7,8 @@ import { BooksAndRunCreateComponent } from './books_and_run_create.component';
 import { BooksAndRunPlayComponent } from './books_and_run_play.component';
 import { BooksAndRunService } from './books_and_run.service';
 
+import { BooksAndRunRouter } from './books_and_run.router';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { BooksAndRunService } from './books_and_run.service';
   imports: [
     CommonModule,
     SharedModule,
+    BooksAndRunRouter,
   ],
   providers: [ BooksAndRunService ],
 })
